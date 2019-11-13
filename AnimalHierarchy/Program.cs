@@ -51,10 +51,6 @@ namespace AnimalHierarchy
             Console.WriteLine("Average age of cats: {0} years", Animal.CalcAverageAge(cats));
             Console.WriteLine("Average age of frogs: {0} years", Animal.CalcAverageAge(frogs));
             Console.ReadKey();
-
-            
         }
-        
-
     }
 }
