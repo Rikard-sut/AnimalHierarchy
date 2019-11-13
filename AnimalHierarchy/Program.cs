@@ -12,15 +12,15 @@ namespace AnimalHierarchy
         {
             Dog[] dogs = new Dog[5]
             {
-                new Dog("Anders", 5, "Male"),
-                new Dog("Anna", 6, "Female"),
-                new Dog("Per", 4, "Male"),
-                new Dog("Siv", 5, "Female"),
-                new Dog("Rex", 7, "Male")
+                new Dog("Anders", 5, Gender.Male),
+                new Dog("Anna", 6, Gender.Female),
+                new Dog("Per", 4, Gender.Male),
+                new Dog("Siv", 5, Gender.Female),
+                new Dog("Rex", 7, Gender.Male)
             };
             Cat[] cats = new Cat[5]
             {
-                new Tomcat("Kattentom",10 ,"Female"),
+                new Tomcat("Kattentom",7),
                 new Kitten("Mini", 4),
                 new Tomcat("Pelle", 8),
                 new Kitten("Lelle", 3),
@@ -28,11 +28,11 @@ namespace AnimalHierarchy
             };
             Frog[] frogs = new Frog[5]
             {
-                new Frog("Grodanboll", 2, "Male"),
-                new Frog("Grodananna", 3, "Female"),
-                new Frog("Grodanper", 2, "Male"),
-                new Frog("Grodansiv", 1, "Female"),
-                new Frog("Grodananders", 2, "Male")
+                new Frog("Grodanboll", 2, Gender.Male),
+                new Frog("Grodananna", 3, Gender.Female),
+                new Frog("Grodanper", 2, Gender.Male),
+                new Frog("Grodansiv", 1, Gender.Female),
+                new Frog("Grodananders", 2, Gender.Male)
             };
             List<Animal> animals = new List<Animal>();
             animals.AddRange(dogs);
@@ -43,26 +43,18 @@ namespace AnimalHierarchy
             foreach (Animal animal in animals)
             {
                 Console.WriteLine(animal);
+                animal.MakeASound();
             }
             Console.ReadKey();
 
-            Console.WriteLine("Average age of dogs: {0} years", CalcAverageAge(dogs));
-            Console.WriteLine("Average age of cats: {0} years", CalcAverageAge(cats));
-            Console.WriteLine("Average age of frogs: {0} years", CalcAverageAge(frogs));
+            Console.WriteLine("Average age of dogs: {0} years", Animal.CalcAverageAge(dogs));
+            Console.WriteLine("Average age of cats: {0} years", Animal.CalcAverageAge(cats));
+            Console.WriteLine("Average age of frogs: {0} years", Animal.CalcAverageAge(frogs));
             Console.ReadKey();
 
             
         }
-        public static float CalcAverageAge(Animal[] item)
-        {
-            int totalAge = 0;
-            for (int i = 0; i < item.Length; i++)
-            {
-                totalAge = totalAge + item[i].Age;
-            }
-            return totalAge / item.Length;
-
-        }
+        
 
     }
 }

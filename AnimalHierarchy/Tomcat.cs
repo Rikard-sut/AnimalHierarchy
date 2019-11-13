@@ -5,15 +5,12 @@ using System.Text;
 
 namespace AnimalHierarchy
 {
-    public class Tomcat : Cat, ISound
+    public class Tomcat : Cat
     {
-        override public string Sex
+       
+        public Tomcat(string name, int age ) :base(name, age, Gender.Male)
         {
-            get { return this.Sex; }
-        }
-        public Tomcat(string name, int age, string sex = "Male") :base(name, age, sex)
-        {
-            this.Sex = "Male";
+            
         }
         override public void MakeASound()
         {

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace AnimalHierarchy
 {
-    public class Dog : Animal, ISound
+    public class Dog : Animal
     {
-        public Dog(string name, int age, string sex) : base(name, age, sex)
+        public Dog(string name, int age, Gender sex) : base(name, age, sex)
         {
 
         }
-        public void MakeASound()
+        public override void MakeASound()
         {
             Console.WriteLine("Woof Woof!!");
         }

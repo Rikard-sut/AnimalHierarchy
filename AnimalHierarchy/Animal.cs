@@ -5,13 +5,13 @@ using System.Text;
 
 namespace AnimalHierarchy
 {
-    public class Animal
+    public class Animal :ISound
     {
         private string name;
         private int age = 0;
-        private string sex;
+        private Gender sex;
 
-        public Animal(string name, int age, string sex)
+        public Animal(string name, int age, Gender sex)
         {
             this.Name = name;
             this.age = age;
@@ -33,15 +33,10 @@ namespace AnimalHierarchy
             get { return this.age; }
             set { this.age = value; }
         }
-        public virtual string Sex
+        public virtual Gender Sex
         {
             get { return this.sex; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("Sex cannot be null");
-                this.sex = value;
-            }
+            set{ this.sex = value; }
         }
         public override string ToString()
         {
@@ -49,7 +44,21 @@ namespace AnimalHierarchy
             info.AppendFormat("Name: {0} Age:{1} Gender: {2} ", this.name, this.age, this.sex);
             return info.ToString();
         }
+        public static float CalcAverageAge(Animal[] item)
+        {
+            int totalAge = 0;
+            for (int i = 0; i < item.Length; i++)
+            {
+                totalAge = totalAge + item[i].Age;
+            }
+            return totalAge / item.Length;
 
-       
+        }
+        public virtual void MakeASound()
+        {
+            Console.WriteLine("Zzzzz");
+        }
+
+
     }
 }

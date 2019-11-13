@@ -5,13 +5,10 @@ using System.Text;
 
 namespace AnimalHierarchy
 {
-    public class Kitten : Cat, ISound
+    public class Kitten : Cat
     {
-        override public string Sex
-        {
-            get { return this.Sex; }
-        }
-        public Kitten(string name, int age, string sex = "Female") : base(name, age, sex)
+       
+        public Kitten(string name, int age) : base(name, age, Gender.Female)
         {
 
         }
