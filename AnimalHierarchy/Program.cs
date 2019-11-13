@@ -20,7 +20,7 @@ namespace AnimalHierarchy
             };
             Cat[] cats = new Cat[5]
             {
-                new Tomcat("Kattentom",10),
+                new Tomcat("Kattentom",10 ,"Female"),
                 new Kitten("Mini", 4),
                 new Tomcat("Pelle", 8),
                 new Kitten("Lelle", 3),
@@ -40,7 +40,10 @@ namespace AnimalHierarchy
             animals.AddRange(frogs);
 
             animals.OrderBy(animal => animal.Age);
-            animals.ForEach(Console.WriteLine);
+            foreach (Animal animal in animals)
+            {
+                Console.WriteLine(animal);
+            }
             Console.ReadKey();
 
             Console.WriteLine("Average age of dogs: {0} years", CalcAverageAge(dogs));

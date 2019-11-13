@@ -13,7 +13,7 @@ namespace AnimalHierarchy
         }
         public Tomcat(string name, int age, string sex = "Male") :base(name, age, sex)
         {
-
+            this.Sex = "Male";
         }
         override public void MakeASound()
         {
