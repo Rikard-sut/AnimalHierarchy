@@ -43,6 +43,12 @@ namespace AnimalHierarchy
                 this.sex = value;
             }
         }
+        public override string ToString()
+        {
+            StringBuilder info = new StringBuilder();
+            info.AppendFormat("Name: {0} Age:{1} Gender: {2} ", this.name, this.age, this.sex);
+            return info.ToString();
+        }
 
 
     }
