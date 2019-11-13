@@ -46,7 +46,7 @@ namespace AnimalHierarchy
         }
         public static float CalcAverageAge(Animal[] item)
         {
-            int totalAge = 0;
+            float totalAge = 0;
             for (int i = 0; i < item.Length; i++)
             {
                 totalAge = totalAge + item[i].Age;
