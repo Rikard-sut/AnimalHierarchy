@@ -33,7 +33,7 @@ namespace AnimalHierarchy
             get { return this.age; }
             set { this.age = value; }
         }
-        public virtual Gender Sex
+        public Gender Sex
         {
             get { return this.sex; }
             set{ this.sex = value; }
